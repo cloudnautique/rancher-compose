@@ -8,6 +8,7 @@ import (
 	cliApp "github.com/docker/libcompose/cli/app"
 	"github.com/docker/libcompose/cli/command"
 	rancherApp "github.com/rancher/rancher-compose/app"
+	"github.com/rancher/rancher-compose/server"
 	"github.com/rancher/rancher-compose/version"
 )
 
@@ -57,6 +58,7 @@ func main() {
 		command.StopCommand(factory),
 		command.ScaleCommand(factory),
 		command.RmCommand(factory),
+		server.ServerCommand(factory),
 		rancherApp.UpgradeCommand(factory),
 	}
 
